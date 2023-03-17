@@ -13,8 +13,12 @@ declare -i z=${#ld[@]}
 for (( n=0 ; n<z ; n++ ));do
 	q[$n]=$(( act[$n]/ld[$n] ))
 	in[$n]=$(( q[$n]-1 ))
-	r[$n]=$(( 100*((1000*act[$n]-(q[$n]*1000*ld[$n]))/in[$n])/(1000*ld[$n]) ))
-	echo "last delay: ${q[$n]} ,interval ${in[$n]}, ${r[$n]}%"
+	if (( in[$n] <= 0 )); then
+		r[$n]=40
+	else	
+		r[$n]=$(( 100*((1000*act[$n]-(q[$n]*1000*ld[$n]))/in[$n])/(1000*ld[$n]) ))
+	fi
+	echo "last delay: ${ld[$n]} ,interval ${in[$n]}, ${r[$n]}%"
 done
 if (( z <= 12 )); then
 	echo "not enought data, means you're probably already doing good"
