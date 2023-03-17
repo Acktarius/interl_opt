@@ -3,7 +3,7 @@ compute an optimized interleave setting for xmr-stak, using multi-threads AMD gp
 
 ## this script is delivered “as is” and I deny any and all liability for any damages arising out of using this script
 
-the purpose of this script if to optimise the interleave setting, using Xmr-Stak in Ubuntu 22.04 LTS, while mining with multi-threads amd gpu.
+the purpose of this script if to optimise the interleave setting, using Xmr-Stak in Ubuntu 22.04 LTS, while mining with multi-threads AMD gpu.
 
 ### The idea is to find a tempo which will minimize delay in a given hash bunch.
 
